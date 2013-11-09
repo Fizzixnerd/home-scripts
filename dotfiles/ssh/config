@@ -1,0 +1,9 @@
+Host local-walkerver walkerver-local lan-walkerver walkerver-lan
+HostName 192.168.1.110
+Port 62831
+User matt
+
+Host walkerver-wan wan-walkerver global-walkerver walkerver-global
+HostName 173.230.164.29
+Port 62831
+User matt

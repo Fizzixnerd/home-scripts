@@ -1,0 +1,38 @@
+#! /usr/bin/python
+
+"""Replace the default dotfiles in the home directory with symlinks
+pointing to the ones found in ~/.system/dotfiles/ .  This may be used,
+for example, to quickly install your prefered .bashrc, .profile,
+.emacs.d/ or .emacs, .ssh, etc.  Thus, the only thing you have to
+"remember" to bring with you to a new environment is .system.
+
+"""
+
+# Created September 17, 2012
+# Author: Matt Walker
+# License: GNU GPL v2 as published by the Free Software Foundation
+# Version: 0.1
+# 
+# Should work with versions 2.7-3.2 of python, I believe.
+
+import subprocess
+import shutil
+import os
+
+SYSTEM_DIRECTORY = os.path.expanduser("~/.system/")
+DOTFILES_DIRECTORY = os.path.join(SYSTEM_DIRECTORY, "dotfiles/")
+
+def list_files_in_dotfile_directory ():
+    """Return a list of the files in the ~/.system/dotfiles/
+    directory, excluding files which end with the character "~" (emacs
+    automatic backups) and those sandwiched by "#" characters (emacs
+    autosaves).
+
+    """
+
+    return filter(lambda x: ((x[-1] != "~") and ((x[0] != "#") and
+                                                 (x[-1] != "#"))),
+                  os.listdir(DOTFILES_DIRECTORY))
+
+if __name__ == "__main__":
+    print (list_files_in_dotfile_directory())
