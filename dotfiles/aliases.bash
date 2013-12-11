@@ -15,11 +15,10 @@ alias ll='/bin/ls -alF --color=auto'
 alias la='/bin/ls -A --color=auto'
 alias l='/bin/ls -CF --color=auto'
 
-# info aliases
-#alias info='info --vi-keys'
-
 # python aliases
-alias python='ipython'
+if [ -e /usr/bin/ipython ]; then
+    alias python='ipython'
+fi
 
 # ps aliases
 alias pss='ps -A | grep'
@@ -35,24 +34,40 @@ alias cp='cp -i'
 alias reboot='sudo reboot'
 
 # apt aliases
-alias aptstall='sudo apt-get install --install-recommends'
+alias aptstall='sudo apt-get install'
 alias aptremove='sudo apt-get remove'
 alias aptsource='sudo apt-get source'
 alias aptlog='sudo apt-get changelog'
 alias aptgrade='sudo apt-get update && sudo apt-get upgrade'
 alias aptsearch='sudo apt-cache search'
+alias aptinfo='sudo apt-cache show'
 alias aptclean='sudo apt-get autoremove && sudo apt-get autoclean'
 
 # user aliases
 
 # screen aliases
-alias indep='screen -d -m'
+if [ -e /usr/bin/screen ]; then
+    alias indep='screen -d -m'
+else
+    alias indep=''
+fi
 
 # emacs aliases
-alias emacs='indep emacs'
+alias emacs='indep emacsclient --alternate-editor="" --create-frame'
 tmacs () {
-    emacsclient "$@"
+    emacsclient --alternate-editor='' --tty  "$@"
 }
+
+# trash aliases
+if [ -e /usr/bin/trash ]; then
+    alias del='trash'
+fi
+
+if [ -e /usr/bin/restore-trash ]; then
+    alias undel='restore-trash'
+elif [ -e /usr/bin/trash-restore ]; then
+    alias undel='trash-restore'
+fi
 
 # lisp aliases
 hyperspec () {
@@ -62,11 +77,11 @@ hyperspec () {
 	echo 'Error: The Common Lisp Hyperspec is not installed on this computer!'
     fi
 }
+
 lisp () {
     sbcl --noinform --end-runtime-options --no-userinit --no-sysinit \
 	 --load "$@" --quit --end-toplevel-options
 }
-
 
 # Raspberry Pi aliases.
 raspi-connect () {
