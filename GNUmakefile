@@ -1,12 +1,11 @@
+scripts='scripts/bash/rrawc.bash scripts/bash/slca.bash scripts/bash/touchpad.sh scripts/bash/start_emacs_server.bash'
 
-.PHONY : all gopath dotfiles
-all : gopath
-	make gopath
 
-gopath :
-	mkdir gopath gopath/src gopath/pkg gopath/bin
+.PHONY : all make-scripts-executable
 
-dotfiles :
-	for filename in `/bin/ls -1 dotfiles`; do;
-		true
-	done
+all :
+	make make-scripts-executable
+
+make-scripts-executable : ${scripts}
+	chmod +x ${scripts}
+
