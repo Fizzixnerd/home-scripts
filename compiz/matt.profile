@@ -1,11 +1,11 @@
 [animation]
 s0_open_effects = animation:Sidekick;animation:Fade;animation:Fade;animation:None;
-s0_open_durations = 120;80;80;50;
+s0_open_durations = 300;80;80;50;
 s0_open_matches = ((type=Normal | Unknown) | name=sun-awt-X11-XFramePeer | name=sun-awt-X11-XDialogPeer) & !(role=toolTipTip | role=qtooltip_label) & !(type=Normal & override_redirect=1) & !(name=gnome-screensaver);(type=Menu | PopupMenu | DropdownMenu | Combo | Dialog | ModalDialog | Normal);(type=Tooltip | Notification | Utility) & !(name=compiz) & !(title=notify-osd);;
 s0_open_options = ;;;;
 s0_open_random_effects = 
 s0_close_effects = animation:Sidekick;animation:Fade;animation:Fade;
-s0_close_durations = 120;80;50;
+s0_close_durations = 300;80;50;
 s0_close_matches = ((type=Normal | Unknown) | name=sun-awt-X11-XFramePeer | name=sun-awt-X11-XDialogPeer) & !(role=toolTipTip | role=qtooltip_label) & !(type=Normal & override_redirect=1) & !(name=gnome-screensaver) & !(name=gnome-screenshot);(type=Menu | PopupMenu | DropdownMenu | Combo | Dialog | ModalDialog | Normal);(type=Tooltip | Notification | Utility) & !(name=compiz) & !(title=notify-osd);
 s0_close_options = ;;;
 s0_close_random_effects = 
@@ -1145,7 +1145,7 @@ s0_focus_instant = false
 s0_no_delay_change = false
 s0_window_match = Normal | Dialog | ModalDialog | Utility | Toolbar | Fullscreen
 s0_active_opacity = 100
-s0_passive_opacity = 10
+s0_passive_opacity = 25
 
 [crashhandler]
 s0_enabled = true
