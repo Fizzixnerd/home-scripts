@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tags>
+<tags>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/Texturer thin.kpp">
+  <tag>Revoy</tag>
+ </resource>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/Move tool.kpp">
+  <tag>Revoy</tag>
+ </resource>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/Detailer soft.kpp">
+  <tag>Revoy</tag>
+ </resource>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/Bristles soft.kpp">
+  <tag>Revoy</tag>
+ </resource>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/Smudging digital.kpp">
+  <tag>Revoy</tag>
+ </resource>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/Smudging textured.kpp">
+  <tag>Revoy</tag>
+ </resource>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/Basic Rounded.kpp">
+  <tag>Revoy</tag>
+ </resource>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/hairy brush.kpp">
+  <tag>Revoy</tag>
+ </resource>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/Airbrush overlay.kpp">
+  <tag>Revoy</tag>
+ </resource>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/Texturer large.kpp">
+  <tag>Revoy</tag>
+ </resource>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/Frottis addition.kpp">
+  <tag>Revoy</tag>
+ </resource>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/Eraser soft.kpp">
+  <tag>Revoy</tag>
+ </resource>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/Thin splatter.kpp">
+  <tag>Revoy</tag>
+ </resource>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/Fill brush.kpp">
+  <tag>Revoy</tag>
+ </resource>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/Drawing pen.kpp">
+  <tag>Revoy</tag>
+ </resource>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/Textured big.kpp">
+  <tag>Revoy</tag>
+ </resource>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/Frottis glazing.kpp">
+  <tag>Revoy</tag>
+ </resource>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/Bristles textured.kpp">
+  <tag>Revoy</tag>
+ </resource>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/Detail expressive.kpp">
+  <tag>Revoy</tag>
+ </resource>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/Airbrush.kpp">
+  <tag>Revoy</tag>
+ </resource>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/Clone tool.kpp">
+  <tag>Revoy</tag>
+ </resource>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/Speedpainting brush.kpp">
+  <tag>Revoy</tag>
+ </resource>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/Airbrush color HSY.kpp">
+  <tag>Revoy</tag>
+ </resource>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/Eraser hard.kpp">
+  <tag>Revoy</tag>
+ </resource>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/Pencil grainy.kpp">
+  <tag>Revoy</tag>
+ </resource>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/Experimental basic.kpp">
+  <tag>Revoy</tag>
+ </resource>
+ <resource identifier="~/.kde/share/apps/krita/paintoppresets/Basic rounded wet.kpp">
+  <tag>Revoy</tag>
+ </resource>
+</tags>

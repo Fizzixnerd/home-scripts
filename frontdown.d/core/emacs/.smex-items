@@ -1,35 +1,55 @@
 
 ;; ----- smex-history -----
 (
- woman
- visual-line-mode
- compile
+ comment-region
  shell
- common-lisp-mode
- todo-mode
- slime
+ rename-file
+ mkdir
+ replace-string
+ recover-this-file
+ buffer-menu
 )
 
 ;; ----- smex-data -----
 (
- (package-list-packages . 2)
- (comment-region . 2)
+ (package-list-packages . 3)
+ (comment-region . 10)
  (xml-mode . 2)
  (battery . 1)
  (conf-space-mode . 1)
  (toggle-read-only . 2)
- (shell . 5)
+ (shell . 17)
  (python-shell-switch-to-shell . 1)
- (buffer-menu . 3)
- (dired . 3)
+ (buffer-menu . 4)
+ (dired . 6)
  (slime-edit-definition . 3)
- (slime . 4)
+ (slime . 13)
  (slime-next-note . 1)
  (slime-next-location . 2)
  (slime-pwd . 1)
  (todo-mode . 1)
  (common-lisp-mode . 1)
- (compile . 2)
- (visual-line-mode . 1)
+ (compile . 24)
+ (visual-line-mode . 5)
  (woman . 1)
+ (lisp-mode . 6)
+ (hayoo . 1)
+ (replace-regexp . 7)
+ (sh-execute-region . 5)
+ (vc-git-grep . 1)
+ (hyperspec-lookup . 2)
+ (slime-eval-buffer . 264)
+ (recover-this-file . 4)
+ (text-mode . 1)
+ (slime-macroexpand-1 . 5)
+ (slime-abort-connection . 1)
+ (erc . 2)
+ (flyspell-mode . 4)
+ (c-mode . 1)
+ (slime-eval-region . 2)
+ (mkdir . 2)
+ (glsl-mode . 1)
+ (eval-buffer . 1)
+ (rename-file . 5)
+ (replace-string . 5)
 )

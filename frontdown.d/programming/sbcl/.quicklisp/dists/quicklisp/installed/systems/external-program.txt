@@ -1,0 +1,1 @@
+dists/quicklisp/software/external-program-20131003-git/external-program.asd

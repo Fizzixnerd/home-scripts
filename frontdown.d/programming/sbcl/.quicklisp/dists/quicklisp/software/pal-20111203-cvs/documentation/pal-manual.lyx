@@ -1,0 +1,1990 @@
+#LyX 1.4.4 created this file. For more info see http://www.lyx.org/
+\lyxformat 245
+\begin_document
+\begin_header
+\textclass article
+\language english
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize default
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Pixel Art Library
+\end_layout
+
+\begin_layout Author
+Tomi Neste tneste@common-lisp.net
+\end_layout
+
+\begin_layout Standard
+
+\newpage
+
+\end_layout
+
+\begin_layout Quote
+Pixel Art Library is published under the MIT license
+\end_layout
+
+\begin_layout Quote
+Copyright (c) 2006 Tomi Neste
+\end_layout
+
+\begin_layout Quote
+Permission is hereby granted, free of charge, to any person obtaining a
+ copy of this software and associated documentation files (the "Software"),
+ to deal in the Software without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ and/or sell copies of the Software, and to permit persons to whom the Software
+ is furnished to do so, subject to the following conditions:
+\end_layout
+
+\begin_layout Quote
+The above copyright notice and this permission notice shall be included
+ in all copies or substantial portions of the Software.
+ 
+\end_layout
+
+\begin_layout Quote
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE
+, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ OTHER DEALINGS IN THE SOFTWARE.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\newpage
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset LatexCommand \tableofcontents{}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\newpage
+
+\end_layout
+
+\begin_layout Section
+Introduction and installation
+\end_layout
+
+\begin_layout Subsection
+What is Pixel Art Library
+\end_layout
+
+\begin_layout Standard
+PAL is a Common Lisp library for developing applications with fast 2d graphics
+ and sound.
+ Internally it uses SDL for sound, event handling and window initialisation
+ and OpenGL for fast hardware accelerated graphics but its API has little
+ to do with the aforementioned libraries.
+\end_layout
+
+\begin_layout Standard
+PAL's design goals are ease of use, portability and reliability.
+ It tries to provide all the 
+\emph on
+common
+\emph default
+ functionality that is needed when creating 2d games and similar applications.
+ As such it neither provides higher level specialised facilities like sprites
+ or collision detection, or lower level OpenGL specific functionality.
+ If the user is familiar with Common Lisp and OpenGL this kind of functionality
+ should be easy to implement on top of PAL.
+\end_layout
+
+\begin_layout Subsection
+Requirements
+\end_layout
+
+\begin_layout Itemize
+Pixel Art Library requires the SDL, SDL_image and SDL_mixer libraries.
+ For Windows users it's easiest to use the ones included in the PAL releases,
+ Linux users should be able to easily install these through their distros
+ package management.
+ 
+\emph on
+Note: These come with their own license.
+\end_layout
+
+\begin_layout Itemize
+Like most modern CL libraries PAL uses ASDF to handle compilation and loading.
+ If you are using SBCL this is included with the default installation and
+ can be loaded with (REQUIRE :ASDF), with other systems you may need to
+ download it separately.
+\end_layout
+
+\begin_layout Itemize
+For interfacing with the foreign libraries PAL uses the excellent CFFI library.
+ It's available from http://common-lisp.net/project/cffi
+\end_layout
+
+\begin_layout Itemize
+For creating the bitmap fonts that PAL uses you need the font creator that
+ is included in Haaf's Game Engine.
+ This will be fixed in the future releases.
+\end_layout
+
+\begin_layout Itemize
+To get anywhere near reasonable performance you need a graphics card and
+ driver that is capable of hardware accelerated OpenGL graphics.
+\end_layout
+
+\begin_layout Subsection
+Installation
+\end_layout
+
+\begin_layout Standard
+After installing CFFI (and possibly ASDF) and downloading and unpacking
+ PAL you should
+\end_layout
+
+\begin_layout Itemize
+Under Windows copy the .dlls to somewhere where they can be found, for example
+ in your Lisp implementations home folder.
+\end_layout
+
+\begin_layout Itemize
+Under Linux, check that the SDL, SDL_mixer and SDL_image packages are installed.
+\end_layout
+
+\begin_layout Itemize
+Copy the PAL folder to where you usually keep your ASDF systems.
+ If you are unsure you can check and modify this through ASDF:*CENTRAL-REGISTRY*
+ variable
+\end_layout
+
+\begin_layout Itemize
+In your Lisp prompt do (ASDF:OOS 'ASDF:LOAD-OP :PAL) and after awhile everything
+ should be compiled and loaded in your Lisp session.
+ In case of errors first check that everything, including the foreign libraries
+ can be found by the system.
+ If nothing works feel free to bug the Pal-dev mailing list.
+ 
+\end_layout
+
+\begin_layout Itemize
+If everything went fine you can now try your first PAL program, enter in
+ the following:
+\end_layout
+
+\begin_layout Quotation
+
+\family typewriter
+(with-pal (:title 
+\begin_inset Quotes eld
+\end_inset
+
+PAL test
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Quotation
+
+\family typewriter
+\InsetSpace ~
+\InsetSpace ~
+(clear-screen 255 255 0)
+\end_layout
+
+\begin_layout Quotation
+
+\family typewriter
+\InsetSpace ~
+\InsetSpace ~
+(with-transformation (:pos (v 400 300) :angle 45f0 :scale 4f0)
+\end_layout
+
+\begin_layout Quotation
+
+\family typewriter
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+(draw-text 
+\begin_inset Quotes eld
+\end_inset
+
+Hello World!
+\begin_inset Quotes erd
+\end_inset
+
+ (v 0 0))
+\end_layout
+
+\begin_layout Quotation
+
+\family typewriter
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+\InsetSpace ~
+(wait-keypress)))
+\end_layout
+
+\begin_layout Standard
+
+\newpage
+
+\end_layout
+
+\begin_layout Section
+Opening and closing PAL and handling resources
+\end_layout
+
+\begin_layout Subsection
+Resources
+\end_layout
+
+\begin_layout Subsection
+Functions and macros
+\end_layout
+
+\begin_layout Description
+OPEN-PAL (&key 
+\shape italic
+width height fps title fullscreenp paths
+\shape default
+)
+\end_layout
+
+\begin_layout Standard
+Opens and initialises PAL window.
+\end_layout
+
+\begin_layout Description
+
+\shape italic
+width
+\shape default
+, width of the screen.
+\end_layout
+
+\begin_layout Description
+
+\shape italic
+height
+\shape default
+, height of the screen.
+ If width and height are 0 then the default desktop dimensions are used.
+\end_layout
+
+\begin_layout Description
+
+\shape italic
+fps
+\shape default
+, maximum number of times per second that the screen is updated.
+\end_layout
+
+\begin_layout Description
+
+\shape italic
+title
+\shape default
+, title of the screen.
+\end_layout
+
+\begin_layout Description
+
+\shape italic
+fullscreenp
+\shape default
+, open in windowed or fullscreen mode.
+\end_layout
+
+\begin_layout Description
+
+\shape italic
+paths
+\shape default
+, pathname or list of pathnames that the load-* functions use to find resources.
+ Initially holds *default-pathname-defauls* and PAL installation directory.
+\end_layout
+
+\begin_layout Description
+CLOSE-PAL ()
+\end_layout
+
+\begin_layout Standard
+Closes PAL screen and frees all loaded resources.
+\end_layout
+
+\begin_layout Description
+WITH-PAL (&key 
+\shape italic
+width height fps title fullscreenp paths
+\shape default
+ &body 
+\shape italic
+body
+\shape default
+)
+\end_layout
+
+\begin_layout Standard
+Opens PAL, executes 
+\shape italic
+body
+\shape default
+ and finally closes PAL.
+ Arguments are same as with OPEN-PAL.
+\end_layout
+
+\begin_layout Description
+FREE-RESOURCE (
+\shape italic
+resource
+\shape default
+)
+\end_layout
+
+\begin_layout Standard
+Frees the 
+\shape italic
+resource
+\shape default
+ (image, font, sample or music).
+\end_layout
+
+\begin_layout Description
+FREE-ALL-RESOURCES ()
+\end_layout
+
+\begin_layout Standard
+Frees all allocated resources.
+\end_layout
+
+\begin_layout Description
+WITH-RESOURCE (
+\shape italic
+var init-form
+\shape default
+) &body 
+\shape italic
+body
+\end_layout
+
+\begin_layout Standard
+Binds 
+\shape italic
+var
+\shape default
+ to the result of 
+\shape italic
+init-form
+\shape default
+ and executes 
+\shape italic
+body
+\shape default
+.
+ Finally calls FREE-RESOURCE on 
+\shape italic
+var.
+\end_layout
+
+\begin_layout Description
+GET-SCREEN-WIDTH () => 
+\shape italic
+number
+\end_layout
+
+\begin_layout Description
+GET-SCREEN-HEIGHT () => 
+\shape italic
+number
+\end_layout
+
+\begin_layout Standard
+Returns the dimensions of PAL screen.
+\end_layout
+
+\begin_layout Standard
+
+\newpage
+
+\end_layout
+
+\begin_layout Section
+Event handling
+\end_layout
+
+\begin_layout Subsection
+Basics
+\end_layout
+
+\begin_layout Standard
+There are two ways to handle events in PAL; the callback based HANDLE-EVENTS
+ or EVENT-LOOP that call given functions when an event happens, or directly
+ polling for key and mouse state with TEST-KEYS, KEY-PRESSED-P and GET-MOUSE-POS.
+\end_layout
+
+\begin_layout Standard
+NOTE: Even if you don't need to use the callback approach it is still necessary
+ to call HANDLE-EVENTS on regular intervals, especially on Windows.
+ Running an EVENT-LOOP does this automatically for you and is the preferred
+ way to handle events.
+\end_layout
+
+\begin_layout Subsection
+Functions and macros
+\end_layout
+
+\begin_layout Description
+HANDLE-EVENTS (&key 
+\shape italic
+key-up-fn key-down-fn mouse-motion-fn quit-fn
+\shape default
+)
+\end_layout
+
+\begin_layout Standard
+Get next event, if any, and call appropriate handler function.
+\end_layout
+
+\begin_layout Description
+
+\shape italic
+key-up-fn
+\shape default
+, called with the released key-sym.
+ For key-syms see chapter 3.3
+\end_layout
+
+\begin_layout Description
+
+\shape italic
+key-down-fn
+\shape default
+, called with the pressed key-sym.
+ When 
+\shape italic
+key-down-fn
+\shape default
+ is not defined pressing Esc-key causes a quit event.
+\end_layout
+
+\begin_layout Description
+
+\shape italic
+mouse-motion-fn
+\shape default
+, called with x and y mouse coordinates.
+\end_layout
+
+\begin_layout Description
+
+\shape italic
+quit-fn
+\shape default
+, called without any arguments when user presses the windows close button.
+ Also called when Esc key is pressed, unless 
+\shape italic
+key-down-fn
+\shape default
+ is defined.
+\end_layout
+
+\begin_layout Description
+UPDATE-SCREEN ()
+\end_layout
+
+\begin_layout Standard
+Updates the PAL screen.
+ No output is visible until UPDATE-SCREEN is called.
+ 
+\end_layout
+
+\begin_layout Description
+EVENT-LOOP ((&key 
+\shape italic
+key-up-fn key-down-fn mouse-motion-fn quit-fn
+\shape default
+) &body 
+\shape italic
+body
+\shape default
+)
+\end_layout
+
+\begin_layout Standard
+Repeatedly calls 
+\shape italic
+body
+\shape default
+ between HANDLE-EVENT and UPDATE-SCREEN.
+ Arguments are the same as with HANDLE-EVENTS.
+ Returns when (return-from event-loop) is called, or, if quit-fn is not
+ given when quit event is generated.
+\end_layout
+
+\begin_layout Description
+GET-MOUSE-POS () => 
+\shape italic
+vector
+\shape default
+ 
+\end_layout
+
+\begin_layout Description
+GET-MOUSE-X () => 
+\shape italic
+number
+\end_layout
+
+\begin_layout Description
+GET-MOUSE-Y () => 
+\shape italic
+number
+\end_layout
+
+\begin_layout Standard
+Returns the current position of mouse pointer.
+\end_layout
+
+\begin_layout Description
+SET-MOUSE-POS (
+\shape italic
+vector
+\shape default
+)
+\end_layout
+
+\begin_layout Standard
+Sets the position of mouse pointer.
+\end_layout
+
+\begin_layout Description
+KEY-PRESSED-P (
+\shape italic
+keysym
+\shape default
+) => 
+\shape italic
+bool
+\end_layout
+
+\begin_layout Standard
+Test if the key 
+\shape italic
+keysym
+\shape default
+ is currently pressed down.
+ For keysyms see chapter 3.3
+\end_layout
+
+\begin_layout Description
+TEST-KEYS ((
+\shape italic
+key
+\shape default
+ | (
+\shape italic
+keys
+\shape default
+) 
+\shape italic
+form
+\shape default
+))
+\end_layout
+
+\begin_layout Standard
+Tests if any of the given keys are currently pressed.
+ Evaluates 
+\shape italic
+all
+\shape default
+ matching forms.
+\end_layout
+
+\begin_layout Standard
+Example:
+\end_layout
+
+\begin_layout Quotation
+(test-keys
+\end_layout
+
+\begin_layout Quotation
+\InsetSpace ~
+\InsetSpace ~
+(:key-left (move-left sprite))
+\end_layout
+
+\begin_layout Quotation
+\InsetSpace ~
+\InsetSpace ~
+(:key-right (move-right sprite))
+\end_layout
+
+\begin_layout Quotation
+\InsetSpace ~
+\InsetSpace ~
+((:key-ctrl :key-mouse-1) (shoot sprite)) 
+\end_layout
+
+\begin_layout Description
+KEYSYM-CHAR (
+\shape italic
+keysym
+\shape default
+) => 
+\shape italic
+char
+\end_layout
+
+\begin_layout Standard
+Returns the corresponding Common Lisp character for 
+\shape italic
+keysym
+\shape default
+, or NIL if the character is out the ASCII range 1-255.
+ 
+\end_layout
+
+\begin_layout Description
+WAIT-KEYPRESS () =>
+\shape italic
+ key
+\end_layout
+
+\begin_layout Standard
+Waits until a key is pressed and released
+\end_layout
+
+\begin_layout Subsection
+Keysyms
+\end_layout
+
+\begin_layout Standard
+These are the symbols used to identify keyboard events.
+ Note that mouse button and scroll wheel events are also represented as
+ keysyms.
+\end_layout
+
+\begin_layout Quotation
+:key-mouse-1
+\end_layout
+
+\begin_layout Quotation
+:key-mouse-2
+\end_layout
+
+\begin_layout Quotation
+:key-mouse-3
+\end_layout
+
+\begin_layout Quotation
+:key-mouse-4
+\end_layout
+
+\begin_layout Quotation
+:key-mouse-5
+\end_layout
+
+\begin_layout Quotation
+:key-unknown
+\end_layout
+
+\begin_layout Quotation
+:key-first
+\end_layout
+
+\begin_layout Quotation
+:key-backspace
+\end_layout
+
+\begin_layout Quotation
+:key-tab
+\end_layout
+
+\begin_layout Quotation
+:key-clear
+\end_layout
+
+\begin_layout Quotation
+:key-return
+\end_layout
+
+\begin_layout Quotation
+:key-pause
+\end_layout
+
+\begin_layout Quotation
+:key-escape
+\end_layout
+
+\begin_layout Quotation
+:key-space
+\end_layout
+
+\begin_layout Quotation
+:key-exclaim
+\end_layout
+
+\begin_layout Quotation
+:key-quotedbl
+\end_layout
+
+\begin_layout Quotation
+:key-hash
+\end_layout
+
+\begin_layout Quotation
+:key-dollar
+\end_layout
+
+\begin_layout Quotation
+:key-ampersand
+\end_layout
+
+\begin_layout Quotation
+:key-quote
+\end_layout
+
+\begin_layout Quotation
+:key-leftparen
+\end_layout
+
+\begin_layout Quotation
+:key-rightparen
+\end_layout
+
+\begin_layout Quotation
+:key-asterisk
+\end_layout
+
+\begin_layout Quotation
+:key-plus
+\end_layout
+
+\begin_layout Quotation
+:key-comma
+\end_layout
+
+\begin_layout Quotation
+:key-minus
+\end_layout
+
+\begin_layout Quotation
+:key-period
+\end_layout
+
+\begin_layout Quotation
+:key-slash
+\end_layout
+
+\begin_layout Quotation
+:key-0
+\end_layout
+
+\begin_layout Quotation
+:key-1
+\end_layout
+
+\begin_layout Quotation
+:key-2
+\end_layout
+
+\begin_layout Quotation
+:key-3
+\end_layout
+
+\begin_layout Quotation
+:key-4
+\end_layout
+
+\begin_layout Quotation
+:key-5
+\end_layout
+
+\begin_layout Quotation
+:key-6
+\end_layout
+
+\begin_layout Quotation
+:key-7
+\end_layout
+
+\begin_layout Quotation
+:key-8
+\end_layout
+
+\begin_layout Quotation
+:key-9
+\end_layout
+
+\begin_layout Quotation
+:key-colon
+\end_layout
+
+\begin_layout Quotation
+:key-semicolon
+\end_layout
+
+\begin_layout Quotation
+:key-less
+\end_layout
+
+\begin_layout Quotation
+:key-equals
+\end_layout
+
+\begin_layout Quotation
+:key-greater
+\end_layout
+
+\begin_layout Quotation
+:key-question
+\end_layout
+
+\begin_layout Quotation
+:key-at
+\end_layout
+
+\begin_layout Quotation
+:key-leftbracket
+\end_layout
+
+\begin_layout Quotation
+:key-backslash
+\end_layout
+
+\begin_layout Quotation
+:key-rightbracket
+\end_layout
+
+\begin_layout Quotation
+:key-caret
+\end_layout
+
+\begin_layout Quotation
+:key-underscore
+\end_layout
+
+\begin_layout Quotation
+:key-backquote
+\end_layout
+
+\begin_layout Quotation
+:key-a
+\end_layout
+
+\begin_layout Quotation
+:key-b
+\end_layout
+
+\begin_layout Quotation
+:key-c
+\end_layout
+
+\begin_layout Quotation
+:key-d
+\end_layout
+
+\begin_layout Quotation
+:key-e
+\end_layout
+
+\begin_layout Quotation
+:key-f
+\end_layout
+
+\begin_layout Quotation
+:key-g
+\end_layout
+
+\begin_layout Quotation
+:key-h
+\end_layout
+
+\begin_layout Quotation
+:key-i
+\end_layout
+
+\begin_layout Quotation
+:key-j
+\end_layout
+
+\begin_layout Quotation
+:key-k
+\end_layout
+
+\begin_layout Quotation
+:key-l
+\end_layout
+
+\begin_layout Quotation
+:key-m
+\end_layout
+
+\begin_layout Quotation
+:key-n
+\end_layout
+
+\begin_layout Quotation
+:key-o
+\end_layout
+
+\begin_layout Quotation
+:key-p
+\end_layout
+
+\begin_layout Quotation
+:key-q
+\end_layout
+
+\begin_layout Quotation
+:key-r
+\end_layout
+
+\begin_layout Quotation
+:key-s
+\end_layout
+
+\begin_layout Quotation
+:key-t
+\end_layout
+
+\begin_layout Quotation
+:key-u
+\end_layout
+
+\begin_layout Quotation
+:key-v
+\end_layout
+
+\begin_layout Quotation
+:key-w
+\end_layout
+
+\begin_layout Quotation
+:key-x
+\end_layout
+
+\begin_layout Quotation
+:key-y
+\end_layout
+
+\begin_layout Quotation
+:key-z
+\end_layout
+
+\begin_layout Quotation
+:key-delete
+\end_layout
+
+\begin_layout Quotation
+:key-world_0
+\end_layout
+
+\begin_layout Quotation
+:key-world_1
+\end_layout
+
+\begin_layout Quotation
+:key-world_2
+\end_layout
+
+\begin_layout Quotation
+:key-world_3
+\end_layout
+
+\begin_layout Quotation
+:key-world_4
+\end_layout
+
+\begin_layout Quotation
+:key-world_5
+\end_layout
+
+\begin_layout Quotation
+:key-world_6
+\end_layout
+
+\begin_layout Quotation
+:key-world_7
+\end_layout
+
+\begin_layout Quotation
+:key-world_8
+\end_layout
+
+\begin_layout Quotation
+:key-world_9
+\end_layout
+
+\begin_layout Quotation
+:key-world_10
+\end_layout
+
+\begin_layout Quotation
+:key-world_11
+\end_layout
+
+\begin_layout Quotation
+:key-world_12
+\end_layout
+
+\begin_layout Quotation
+:key-world_13
+\end_layout
+
+\begin_layout Quotation
+:key-world_14
+\end_layout
+
+\begin_layout Quotation
+:key-world_15
+\end_layout
+
+\begin_layout Quotation
+:key-world_16
+\end_layout
+
+\begin_layout Quotation
+:key-world_17
+\end_layout
+
+\begin_layout Quotation
+:key-world_18
+\end_layout
+
+\begin_layout Quotation
+:key-world_19
+\end_layout
+
+\begin_layout Quotation
+:key-world_20
+\end_layout
+
+\begin_layout Quotation
+:key-world_21
+\end_layout
+
+\begin_layout Quotation
+:key-world_22
+\end_layout
+
+\begin_layout Quotation
+:key-world_23
+\end_layout
+
+\begin_layout Quotation
+:key-world_24
+\end_layout
+
+\begin_layout Quotation
+:key-world_25
+\end_layout
+
+\begin_layout Quotation
+:key-world_26
+\end_layout
+
+\begin_layout Quotation
+:key-world_27
+\end_layout
+
+\begin_layout Quotation
+:key-world_28
+\end_layout
+
+\begin_layout Quotation
+:key-world_29
+\end_layout
+
+\begin_layout Quotation
+:key-world_30
+\end_layout
+
+\begin_layout Quotation
+:key-world_31
+\end_layout
+
+\begin_layout Quotation
+:key-world_32
+\end_layout
+
+\begin_layout Quotation
+:key-world_33
+\end_layout
+
+\begin_layout Quotation
+:key-world_34
+\end_layout
+
+\begin_layout Quotation
+:key-world_35
+\end_layout
+
+\begin_layout Quotation
+:key-world_36
+\end_layout
+
+\begin_layout Quotation
+:key-world_37
+\end_layout
+
+\begin_layout Quotation
+:key-world_38
+\end_layout
+
+\begin_layout Quotation
+:key-world_39
+\end_layout
+
+\begin_layout Quotation
+:key-world_40
+\end_layout
+
+\begin_layout Quotation
+:key-world_41
+\end_layout
+
+\begin_layout Quotation
+:key-world_42
+\end_layout
+
+\begin_layout Quotation
+:key-world_43
+\end_layout
+
+\begin_layout Quotation
+:key-world_44
+\end_layout
+
+\begin_layout Quotation
+:key-world_45
+\end_layout
+
+\begin_layout Quotation
+:key-world_46
+\end_layout
+
+\begin_layout Quotation
+:key-world_47
+\end_layout
+
+\begin_layout Quotation
+:key-world_48
+\end_layout
+
+\begin_layout Quotation
+:key-world_49
+\end_layout
+
+\begin_layout Quotation
+:key-world_50
+\end_layout
+
+\begin_layout Quotation
+:key-world_51
+\end_layout
+
+\begin_layout Quotation
+:key-world_52
+\end_layout
+
+\begin_layout Quotation
+:key-world_53
+\end_layout
+
+\begin_layout Quotation
+:key-world_54
+\end_layout
+
+\begin_layout Quotation
+:key-world_55
+\end_layout
+
+\begin_layout Quotation
+:key-world_56
+\end_layout
+
+\begin_layout Quotation
+:key-world_57
+\end_layout
+
+\begin_layout Quotation
+:key-world_58
+\end_layout
+
+\begin_layout Quotation
+:key-world_59
+\end_layout
+
+\begin_layout Quotation
+:key-world_60
+\end_layout
+
+\begin_layout Quotation
+:key-world_61
+\end_layout
+
+\begin_layout Quotation
+:key-world_62
+\end_layout
+
+\begin_layout Quotation
+:key-world_63
+\end_layout
+
+\begin_layout Quotation
+:key-world_64
+\end_layout
+
+\begin_layout Quotation
+:key-world_65
+\end_layout
+
+\begin_layout Quotation
+:key-world_66
+\end_layout
+
+\begin_layout Quotation
+:key-world_67
+\end_layout
+
+\begin_layout Quotation
+:key-world_68
+\end_layout
+
+\begin_layout Quotation
+:key-world_69
+\end_layout
+
+\begin_layout Quotation
+:key-world_70
+\end_layout
+
+\begin_layout Quotation
+:key-world_71
+\end_layout
+
+\begin_layout Quotation
+:key-world_72
+\end_layout
+
+\begin_layout Quotation
+:key-world_73
+\end_layout
+
+\begin_layout Quotation
+:key-world_74
+\end_layout
+
+\begin_layout Quotation
+:key-world_75
+\end_layout
+
+\begin_layout Quotation
+:key-world_76
+\end_layout
+
+\begin_layout Quotation
+:key-world_77
+\end_layout
+
+\begin_layout Quotation
+:key-world_78
+\end_layout
+
+\begin_layout Quotation
+:key-world_79
+\end_layout
+
+\begin_layout Quotation
+:key-world_80
+\end_layout
+
+\begin_layout Quotation
+:key-world_81
+\end_layout
+
+\begin_layout Quotation
+:key-world_82
+\end_layout
+
+\begin_layout Quotation
+:key-world_83
+\end_layout
+
+\begin_layout Quotation
+:key-world_84
+\end_layout
+
+\begin_layout Quotation
+:key-world_85
+\end_layout
+
+\begin_layout Quotation
+:key-world_86
+\end_layout
+
+\begin_layout Quotation
+:key-world_87
+\end_layout
+
+\begin_layout Quotation
+:key-world_88
+\end_layout
+
+\begin_layout Quotation
+:key-world_89
+\end_layout
+
+\begin_layout Quotation
+:key-world_90
+\end_layout
+
+\begin_layout Quotation
+:key-world_91
+\end_layout
+
+\begin_layout Quotation
+:key-world_92
+\end_layout
+
+\begin_layout Quotation
+:key-world_93
+\end_layout
+
+\begin_layout Quotation
+:key-world_94
+\end_layout
+
+\begin_layout Quotation
+:key-world_95
+\end_layout
+
+\begin_layout Quotation
+:key-kp0
+\end_layout
+
+\begin_layout Quotation
+:key-kp1
+\end_layout
+
+\begin_layout Quotation
+:key-kp2
+\end_layout
+
+\begin_layout Quotation
+:key-kp3
+\end_layout
+
+\begin_layout Quotation
+:key-kp4
+\end_layout
+
+\begin_layout Quotation
+:key-kp5
+\end_layout
+
+\begin_layout Quotation
+:key-kp6
+\end_layout
+
+\begin_layout Quotation
+:key-kp7
+\end_layout
+
+\begin_layout Quotation
+:key-kp8
+\end_layout
+
+\begin_layout Quotation
+:key-kp9
+\end_layout
+
+\begin_layout Quotation
+:key-kp_period
+\end_layout
+
+\begin_layout Quotation
+:key-kp_divide
+\end_layout
+
+\begin_layout Quotation
+:key-kp_multiply
+\end_layout
+
+\begin_layout Quotation
+:key-kp_minus
+\end_layout
+
+\begin_layout Quotation
+:key-kp_plus
+\end_layout
+
+\begin_layout Quotation
+:key-kp_enter
+\end_layout
+
+\begin_layout Quotation
+:key-kp_equals
+\end_layout
+
+\begin_layout Quotation
+:key-up
+\end_layout
+
+\begin_layout Quotation
+:key-down
+\end_layout
+
+\begin_layout Quotation
+:key-right
+\end_layout
+
+\begin_layout Quotation
+:key-left
+\end_layout
+
+\begin_layout Quotation
+:key-insert
+\end_layout
+
+\begin_layout Quotation
+:key-home
+\end_layout
+
+\begin_layout Quotation
+:key-end
+\end_layout
+
+\begin_layout Quotation
+:key-pageup
+\end_layout
+
+\begin_layout Quotation
+:key-pagedown
+\end_layout
+
+\begin_layout Quotation
+:key-f1
+\end_layout
+
+\begin_layout Quotation
+:key-f2
+\end_layout
+
+\begin_layout Quotation
+:key-f3
+\end_layout
+
+\begin_layout Quotation
+:key-f4
+\end_layout
+
+\begin_layout Quotation
+:key-f5
+\end_layout
+
+\begin_layout Quotation
+:key-f6
+\end_layout
+
+\begin_layout Quotation
+:key-f7
+\end_layout
+
+\begin_layout Quotation
+:key-f8
+\end_layout
+
+\begin_layout Quotation
+:key-f9
+\end_layout
+
+\begin_layout Quotation
+:key-f10
+\end_layout
+
+\begin_layout Quotation
+:key-f11
+\end_layout
+
+\begin_layout Quotation
+:key-f12
+\end_layout
+
+\begin_layout Quotation
+:key-f13
+\end_layout
+
+\begin_layout Quotation
+:key-f14
+\end_layout
+
+\begin_layout Quotation
+:key-f15
+\end_layout
+
+\begin_layout Quotation
+:key-numlock
+\end_layout
+
+\begin_layout Quotation
+:key-capslock
+\end_layout
+
+\begin_layout Quotation
+:key-scrollock
+\end_layout
+
+\begin_layout Quotation
+:key-rshift
+\end_layout
+
+\begin_layout Quotation
+:key-lshift
+\end_layout
+
+\begin_layout Quotation
+:key-rctrl
+\end_layout
+
+\begin_layout Quotation
+:key-lctrl
+\end_layout
+
+\begin_layout Quotation
+:key-ralt
+\end_layout
+
+\begin_layout Quotation
+:key-lalt
+\end_layout
+
+\begin_layout Quotation
+:key-rmeta
+\end_layout
+
+\begin_layout Quotation
+:key-lmeta
+\end_layout
+
+\begin_layout Quotation
+:key-lsuper
+\end_layout
+
+\begin_layout Quotation
+:key-rsuper
+\end_layout
+
+\begin_layout Quotation
+:key-mode
+\end_layout
+
+\begin_layout Quotation
+:key-compose
+\end_layout
+
+\begin_layout Quotation
+:key-help
+\end_layout
+
+\begin_layout Quotation
+:key-print
+\end_layout
+
+\begin_layout Quotation
+:key-sysreq
+\end_layout
+
+\begin_layout Quotation
+:key-break
+\end_layout
+
+\begin_layout Quotation
+:key-menu
+\end_layout
+
+\begin_layout Quotation
+:key-power
+\end_layout
+
+\begin_layout Quotation
+:key-euro
+\end_layout
+
+\begin_layout Quotation
+:key-undo
+\end_layout
+
+\begin_layout Quotation
+:key-last
+\end_layout
+
+\begin_layout Standard
+
+\newpage
+
+\end_layout
+
+\begin_layout Section
+Images and drawing
+\end_layout
+
+\begin_layout Subsection
+CLEAR-SCREEN
+\end_layout
+
+\begin_layout Subsection
+DRAW-POINT
+\end_layout
+
+\begin_layout Subsection
+DRAW-LINE
+\end_layout
+
+\begin_layout Subsection
+DRAW-ARROW
+\end_layout
+
+\begin_layout Subsection
+LOAD-IMAGE
+\end_layout
+
+\begin_layout Subsection
+IMAGE-WIDTH, IMAGE-HEIGHT
+\end_layout
+
+\begin_layout Subsection
+DRAW-IMAGE
+\end_layout
+
+\begin_layout Subsection
+DRAW-IMAGE*
+\end_layout
+
+\begin_layout Subsection
+DRAW-RECTANGLE
+\end_layout
+
+\begin_layout Subsection
+DRAW-CIRCLE
+\end_layout
+
+\begin_layout Subsection
+DRAW-POLYGON
+\end_layout
+
+\begin_layout Subsection
+DRAW-POLYGON*
+\end_layout
+
+\begin_layout Subsection
+SET-CURSOR
+\end_layout
+
+\begin_layout Subsection
+IMAGE-FROM-ARRAY
+\end_layout
+
+\begin_layout Subsection
+IMAGE-FROM-FN
+\end_layout
+
+\begin_layout Subsection
+LOAD-IMAGE-TO-ARRAY
+\end_layout
+
+\begin_layout Subsection
+SCREEN-TO-ARRAY
+\end_layout
+
+\begin_layout Standard
+
+\newpage
+
+\end_layout
+
+\begin_layout Section
+Handling graphics state
+\end_layout
+
+\begin_layout Subsection
+ROTATE
+\end_layout
+
+\begin_layout Subsection
+TRANSLATE
+\end_layout
+
+\begin_layout Subsection
+SCALE
+\end_layout
+
+\begin_layout Subsection
+WITH-TRANSFORMATION
+\end_layout
+
+\begin_layout Subsection
+SET-BLEND-MODE
+\end_layout
+
+\begin_layout Subsection
+RESET-BLEND
+\end_layout
+
+\begin_layout Subsection
+SET-BLEND-COLOR
+\end_layout
+
+\begin_layout Subsection
+WITH-BLEND
+\end_layout
+
+\begin_layout Subsection
+WITH-CLIPPING
+\end_layout
+
+\begin_layout Standard
+
+\newpage
+
+\end_layout
+
+\begin_layout Section
+Music and samples
+\end_layout
+
+\begin_layout Subsection
+LOAD-SAMPLE, SAMPLE-P
+\end_layout
+
+\begin_layout Subsection
+PLAY-SAMPLE
+\end_layout
+
+\begin_layout Subsection
+SET-SAMPLE-VOLUME
+\end_layout
+
+\begin_layout Subsection
+LOAD-MUSIC
+\end_layout
+
+\begin_layout Subsection
+SET-MUSIC-VOLUME
+\end_layout
+
+\begin_layout Subsection
+PLAY-MUSIC
+\end_layout
+
+\begin_layout Subsection
+HALT-MUSIC
+\end_layout
+
+\begin_layout Standard
+
+\newpage
+
+\end_layout
+
+\begin_layout Section
+Fonts
+\end_layout
+
+\begin_layout Subsection
+LOAD-FONT
+\end_layout
+
+\begin_layout Subsection
+GET-TEXT-SIZE
+\end_layout
+
+\begin_layout Subsection
+GET-FONT-HEIGHT
+\end_layout
+
+\begin_layout Subsection
+DRAW-TEXT
+\end_layout
+
+\begin_layout Subsection
+DRAW-FPS
+\end_layout
+
+\begin_layout Subsection
+MESSAGE
+\end_layout
+
+\begin_layout Standard
+
+\newpage
+
+\end_layout
+
+\begin_layout Section
+Tags
+\end_layout
+
+\begin_layout Subsection
+DEFINE-TAGS
+\end_layout
+
+\begin_layout Subsection
+ADD-TAG
+\end_layout
+
+\begin_layout Subsection
+TAG
+\end_layout
+
+\begin_layout Standard
+
+\newpage
+
+\end_layout
+
+\begin_layout Section
+Vector and math operations
+\end_layout
+
+\begin_layout Subsection
+V, COPY-VEC, V=
+\end_layout
+
+\begin_layout Subsection
+ANGLE-V, V-ANGLE, V-ROTATE
+\end_layout
+
+\begin_layout Subsection
+VX, VY
+\end_layout
+
+\begin_layout Subsection
+V+, V-, V*, V/, V+!, V-!, V*!, V/!
+\end_layout
+
+\begin_layout Subsection
+V-MAX, V-MIN
+\end_layout
+
+\begin_layout Subsection
+V-TRUNCATE
+\end_layout
+
+\begin_layout Subsection
+V-DIRECTION
+\end_layout
+
+\begin_layout Subsection
+CLOSEST-POINT-TO-LINE
+\end_layout
+
+\begin_layout Subsection
+DISTANCE-FROM-LINE
+\end_layout
+
+\begin_layout Subsection
+POINT-IN-LINE-P
+\end_layout
+
+\begin_layout Subsection
+LINES-INTERSECTION
+\end_layout
+
+\begin_layout Subsection
+CIRCLE-LINE-INTERSECTION
+\end_layout
+
+\begin_layout Subsection
+POINT-INSIDE-RECTANGLE-P, POINT-INSIDE-CIRCLE-P
+\end_layout
+
+\begin_layout Subsection
+CIRCLES-OVERLAP-P
+\end_layout
+
+\begin_layout Standard
+
+\newpage
+
+\end_layout
+
+\begin_layout Section
+Miscellaneous functions and macros
+\end_layout
+
+\begin_layout Subsection
+GET-GL-INFO
+\end_layout
+
+\begin_layout Subsection
+DATA-PATH
+\end_layout
+
+\begin_layout Subsection
+GET-FPS
+\end_layout
+
+\begin_layout Subsection
+LOAD-FOREIGN-LIBRARIES
+\end_layout
+
+\begin_layout Subsection
+GET-APPLICATION-FOLDER, GET-APPLICATION-FILE
+\end_layout
+
+\begin_layout Subsection
+RANDOMLY
+\end_layout
+
+\begin_layout Subsection
+RANDOM-ELEMENT
+\end_layout
+
+\begin_layout Subsection
+CLAMP
+\end_layout
+
+\begin_layout Subsection
+DO-N
+\end_layout
+
+\end_body
+\end_document

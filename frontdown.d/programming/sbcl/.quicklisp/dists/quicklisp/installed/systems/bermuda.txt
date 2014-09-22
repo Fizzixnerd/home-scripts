@@ -1,0 +1,1 @@
+dists/quicklisp/software/pal-20111203-cvs/examples/bermuda/bermuda.asd
