@@ -1,0 +1,3 @@
+files:
+  - source: gaming/steam/.steam
+    target: ~/.steam

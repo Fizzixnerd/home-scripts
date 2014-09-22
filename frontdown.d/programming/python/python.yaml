@@ -1,0 +1,6 @@
+files:
+  - source: programming/python/.ipython_history
+    target: ~/.ipython_history
+
+  - source: programming/python/ipython
+    target: ~/.config/ipython

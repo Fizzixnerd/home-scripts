@@ -1,0 +1,6 @@
+files:
+  - source: gui/nautilus/nautilus
+    target: ~/.config/nautilus
+
+  - source: gui/nautilus/nautilus-actions
+    target: ~/.config/nautilus-actions

@@ -1,0 +1,3 @@
+files:
+  - source: core/ssh/.ssh
+    target: ~/.ssh

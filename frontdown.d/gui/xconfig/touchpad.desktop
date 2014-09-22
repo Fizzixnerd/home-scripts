@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=touchpad
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_CA]=Set Touchpad Properties
+Name=Set Touchpad Properties
+Comment[en_CA]=Set the xinput(1) properties of my touchpad to be what I want them to be.
+Comment=Set the xinput(1) properties of my touchpad to be what I want them to be.

@@ -1,0 +1,131 @@
+{
+  "frame.color_rgba": [
+    0.12, 
+    0.12, 
+    0.12, 
+    0.92
+  ], 
+  "view.high_quality_zoom": true, 
+  "ui.feedback.scale": true, 
+  "ui.feedback.last_pos": false, 
+  "colors.current": "#292929", 
+  "brushmanager.selected_groups": [
+    "set#2"
+  ], 
+  "ui.toolbar_items": {
+    "toolbar1_file": true, 
+    "toolbar1_view_modes": true, 
+    "toolbar1_subwindows": true, 
+    "toolbar1_edit": true, 
+    "toolbar1_blendmodes": false, 
+    "toolbar1_view_manips": false, 
+    "toolbar1_view_resets": true, 
+    "toolbar1_scrap": false, 
+    "toolbar1_linemodes": false
+  }, 
+  "input.button_mapping": {
+    "<Primary>Button1": "ColorPickMode", 
+    "<Primary>Button2": "ZoomViewMode", 
+    "<Primary><Shift>Button2": "FrameEditMode", 
+    "<Shift>Button1": "StraightMode", 
+    "<Shift>Button2": "RotateViewMode", 
+    "Button3": "ShowPopupMenu", 
+    "Button2": "PanViewMode", 
+    "<Shift><Alt>Button2": "FrameEditMode", 
+    "<Alt>Button2": "ZoomViewMode", 
+    "<Alt>Button1": "ColorPickMode"
+  }, 
+  "view.default_zoom": 1.0, 
+  "misc.context_restores_color": true, 
+  "ui.parts": {
+    "main_toolbar": true, 
+    "menubar": true
+  }, 
+  "ui.hide_toolbar_in_fullscreen": true, 
+  "input.device_mode": "screen", 
+  "layout.window_positions": {
+    "brushSelectionWindow": {
+      "h": 350, 
+      "sbindex": 2, 
+      "sbheight": 350, 
+      "w": 250, 
+      "y": -150, 
+      "x": -100, 
+      "hidden": true, 
+      "floating": true
+    }, 
+    "inputTestWindow": {}, 
+    "brushSettingsWindow": {
+      "y": -128, 
+      "h": 300, 
+      "w": 300, 
+      "x": -460
+    }, 
+    "colorWindow": {
+      "h": 300, 
+      "sbindex": 0, 
+      "sbheight": 300, 
+      "w": 250, 
+      "y": 125, 
+      "x": -100, 
+      "hidden": true, 
+      "floating": true
+    }, 
+    "layersWindow": {
+      "h": 229, 
+      "sbindex": 3, 
+      "sbheight": 200, 
+      "w": 202, 
+      "y": 674, 
+      "x": 1258, 
+      "hidden": true, 
+      "floating": true
+    }, 
+    "backgroundWindow": {}, 
+    "preferencesWindow": {}, 
+    "scratchWindow": {
+      "h": 250, 
+      "sbindex": 4, 
+      "sbheight": 250, 
+      "w": 300, 
+      "y": 125, 
+      "x": -555, 
+      "hidden": true, 
+      "floating": true
+    }, 
+    "frameWindow": {}, 
+    "main-window": {
+      "h": 948, 
+      "sbwidth": 250, 
+      "w": 1820, 
+      "y": 32, 
+      "x": 50
+    }
+  }, 
+  "linemode.exit_pressure": 0.30000000000000004, 
+  "ui.hide_subwindows_in_fullscreen": true, 
+  "linemode.entry_pressure": 0.30000000000000004, 
+  "colors.history": [
+    "#ee3333", 
+    "#336699", 
+    "#44aa66", 
+    "#aa6633", 
+    "#292929"
+  ], 
+  "saving.scrap_prefix": "~/MyPaint/scrap", 
+  "ui.hide_menubar_in_fullscreen": true, 
+  "input.global_pressure_mapping": [
+    [
+      0.0, 
+      1.0
+    ], 
+    [
+      1.0, 
+      0.0
+    ]
+  ], 
+  "saving.default_format": "openraster", 
+  "ui.feedback.symmetry": true, 
+  "brushmanager.selected_brush": "deevad/2B_pencil", 
+  "scratchpad.last_opened_scratchpad": "/home/matt/.mypaint/scratchpads/autosave.ora"
+}

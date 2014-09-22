@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=touchegg
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_CA]=Touchegg
+Name=Touchegg
+Comment[en_CA]=Enable multitouch gestures.
+Comment=Enable multitouch gestures.

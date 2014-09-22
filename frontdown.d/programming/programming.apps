@@ -1,0 +1,14 @@
+ipython ipython-doc ipython3 python-pip python-yaml
+ruby ruby2.0 ruby2.0-doc
+slime cl-swank sbcl sbcl-doc hyperspec cl-quicklisp cl-cffi cl-alexandria
+ghc ghc-doc ghc-mod ghc-prof ghc-dynamic ghc-haddock haskell-doc haskell-mode haskell-platform haskell-platform-doc haskell-platform-prof
+g++ clang-3.5 clang-3.5-doc clang-3.5-examples clang-format-3.5 libstdc++-4.8-doc
+gcc-doc glibc-doc glibc-doc-reference build-essential autoconf autoconf-doc exuberant-ctags yasnippet autotools-dev libtool libtool-doc
+openjdk-7-jdk openjdk-7-doc openjdk-7-jre
+clojure1.4 clojure-contrib
+groovy groovy-doc
+texlive-full auctex clisp-doc
+plt-scheme plt-scheme-doc
+guile-2.0 guile-2.0-libs guile-2.0-doc guile-library
+golang golang-mode golang-doc
+parrot parrot-doc

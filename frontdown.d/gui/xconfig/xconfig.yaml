@@ -1,0 +1,24 @@
+files:
+  - source: gui/xconfig/rrawc.xmod
+    target: ~/.system/xmodmap/rrawc.xmod
+
+  - source: gui/xconfig/rrawc.bash
+    target: ~/.system/scripts/bash/rrawc.bash
+    link:   ~/.system/bin/rrawc
+
+  - source: gui/xconfig/rrawc.desktop
+    target: ~/.config/autostart/rrawc.desktop
+
+  - source: gui/xconfig/touchpad.bash
+    target: ~/.system/scripts/bash/touchpad.bash
+    link:   ~/.system/bin/touchpad
+
+  - source: gui/xconfig/touchpad.desktop
+    target: ~/.config/autostart/touchpad.desktop
+
+  - source: gui/xconfig/touchegg
+    target: ~/.config/touchegg
+
+  - source: gui/xconfig/touchegg.desktop
+    target: ~/.config/autostart/touchegg.desktop
+

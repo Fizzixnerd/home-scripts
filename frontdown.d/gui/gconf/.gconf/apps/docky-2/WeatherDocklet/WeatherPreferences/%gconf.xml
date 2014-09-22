@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="Location" mtime="1385604462" type="list" ltype="string">
+		<li type="string">
+			<stringvalue>Newmarket, Ontario</stringvalue>
+		</li>
+	</entry>
+	<entry name="Metric" mtime="1385604412" type="bool" value="true"/>
+	<entry name="Source" mtime="1385604405" type="string">
+		<stringvalue>iGoogle</stringvalue>
+	</entry>
+</gconf>

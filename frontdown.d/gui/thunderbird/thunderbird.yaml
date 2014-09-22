@@ -1,0 +1,3 @@
+files:
+  - source: gui/thunderbird/.thunderbird
+    target: ~/.thunderbird

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="ShowSearchFirst" mtime="1387478469" type="bool" value="false"/>
+	<entry name="InheritSSL" mtime="1387478469" type="bool" value="false"/>
+	<entry name="ReturnResults" mtime="1387478469" type="bool" value="true"/>
+	<entry name="SearchRestrictions" mtime="1387478481" type="string">
+		<stringvalue>off</stringvalue>
+	</entry>
+</gconf>

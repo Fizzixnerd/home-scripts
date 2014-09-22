@@ -1,0 +1,35 @@
+
+;; ----- smex-history -----
+(
+ woman
+ visual-line-mode
+ compile
+ shell
+ common-lisp-mode
+ todo-mode
+ slime
+)
+
+;; ----- smex-data -----
+(
+ (package-list-packages . 2)
+ (comment-region . 2)
+ (xml-mode . 2)
+ (battery . 1)
+ (conf-space-mode . 1)
+ (toggle-read-only . 2)
+ (shell . 5)
+ (python-shell-switch-to-shell . 1)
+ (buffer-menu . 3)
+ (dired . 3)
+ (slime-edit-definition . 3)
+ (slime . 4)
+ (slime-next-note . 1)
+ (slime-next-location . 2)
+ (slime-pwd . 1)
+ (todo-mode . 1)
+ (common-lisp-mode . 1)
+ (compile . 2)
+ (visual-line-mode . 1)
+ (woman . 1)
+)

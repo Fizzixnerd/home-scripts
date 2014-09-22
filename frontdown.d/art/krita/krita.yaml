@@ -1,0 +1,3 @@
+files:
+  - source: art/krita/krita
+    target: ~/.kde/share/apps/krita

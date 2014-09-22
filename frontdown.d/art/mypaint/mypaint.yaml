@@ -1,0 +1,3 @@
+files:
+  - source: art/mypaint/.mypaint
+    target: ~/.mypaint

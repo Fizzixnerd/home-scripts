@@ -1,0 +1,16 @@
+version=1
+uri=mailbox://nobody@smart%20mailboxes/Drafts
+searchFolderFlag=400
+scope=imap://matt.g.d.walker%40gmail.com@imap.googlemail.com/Drafts|imap://matt.g.d.walker%40gmail.com@imap.googlemail.com/[Gmail]/Drafts
+terms=ALL
+searchOnline=true
+uri=mailbox://nobody@smart%20mailboxes/Sent
+searchFolderFlag=200
+scope=imap://matt.g.d.walker%40gmail.com@imap.googlemail.com/Sent|imap://matt.g.d.walker%40gmail.com@imap.googlemail.com/[Gmail]/Sent Mail
+terms=ALL
+searchOnline=true
+uri=mailbox://nobody@smart%20mailboxes/Trash
+searchFolderFlag=100
+scope=mailbox://nobody@Local%20Folders/Trash|mailbox://nobody@Feeds/Trash|imap://matt.g.d.walker%40gmail.com@imap.googlemail.com/[Gmail]/Bin
+terms=ALL
+searchOnline=true

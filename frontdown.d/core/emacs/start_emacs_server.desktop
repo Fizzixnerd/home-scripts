@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=start_emacs_server
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_CA]=Start Emacs Server
+Name=Start Emacs Server
+Comment[en_CA]=
+Comment=

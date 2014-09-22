@@ -1,0 +1,15 @@
+files:
+  - source: core/bash/.profile
+    target: ~/.profile
+
+  - source: core/bash/.aliases.bash
+    target: ~/.aliases.bash
+
+  - source: core/bash/.bashrc
+    target: ~/.bashrc
+
+  - source: core/bash/.bash_logout
+    target: ~/.bash_logout
+
+  - source: core/bash/.bash_history
+    target: ~/.bash_history

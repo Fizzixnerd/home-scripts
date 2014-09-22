@@ -1,0 +1,4 @@
+files:
+  - source: gui/firefox/.mozilla
+    target: ~/.mozilla
+

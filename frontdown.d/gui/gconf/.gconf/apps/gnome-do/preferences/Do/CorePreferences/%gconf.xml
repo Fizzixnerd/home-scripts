@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="Theme" mtime="1386714838" type="string">
+		<stringvalue>Classic</stringvalue>
+	</entry>
+	<entry name="QuietStart" mtime="1385652016" type="bool" value="true"/>
+</gconf>

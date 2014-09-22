@@ -1,0 +1,107 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/../" . "bin/")
+ ("/home/matt/src/simple-lisp/src/extern/" . "mpc/")
+ ("/home/matt/src/simple-lisp/src/" . "include/")
+ ("/home/matt/.config/common-lisp/" . "source-registry.conf.d/")
+ ("/home/matt/.config/" . "common-lisp/")
+ ("/home/" . "matt/")
+ ("/home/matt/src/cl-sphinx/" . "src/")
+ ("/home/matt/src/" . "cl-sphinx/")
+ ("/home/matt/Downloads/touchegg-1.1.1/src/touchegg/gestures/" . "implementation/")
+ ("/home/matt/.system/" . "xmodmap/")
+ ("/home/matt/" . ".config/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/matt/src/simple-lisp/src/"
+ "/home/matt/src/simple-lisp/src/include/"
+ "/../bin/"
+ "/home/matt/src/simple-lisp/src/extern/mpc/"
+ "/home/matt/src/cl-sphinx/src/"
+ "/home/matt/.config/common-lisp/source-registry.conf.d/"
+ "/home/matt/src/cl-sphinx/data/"
+ "/home/matt/src/cl-sphinx/tests/"
+ "/home/matt/src/cl-sphinx/"
+ "/home/matt/.system/scripts/python/pydel/"
+ "/home/matt/src/ultralisp/"
+ "/etc/X11/xorg.conf.d/"
+ "/home/matt/Downloads/touchegg-1.1.1/src/touchegg/gestures/implementation/"
+ "/home/matt/Downloads/touchegg-1.1.1/src/touchegg/gestures/factory/"
+ "/home/matt/.system/xmodmap/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "debug.h"
+ "eval.h"
+ "mpc.c"
+ "Makefile"
+ "eval.c"
+ "linedit.h"
+ "traverse.h"
+ "mpc.h"
+ "traverse.c"
+ "bash"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/matt/src/simple-lisp/src/" (21323 65032 564113 478000) "parsing" "debug.h" "eval.c" "parsing.c" "traverse.c" "mpc.c" "Makefile" "obj/" "extern/" "include/" "../" "./")
+
+ ("/home/matt/src/simple-lisp/src/include/" (21323 64587 960096 898000) "debug.h" "eval.h" "eval.h~" "traverse.h" "traverse.h~" "mpc.h" "linedit.h" "linedit.h~" "../" "./")
+
+ ("/../bin/" (21318 40484 153698 359000) "udevadm" "loginctl" "ksh" "ksh93" "setserial" "ps" "kill" "efibootmgr" "znew" "zmore" "zless" "zgrep" "zforce" "zfgrep" "zegrep" "zdiff" "zcmp" "zcat" "ypdomainname" "whiptail" "which" "vmmouse_detect" "vdir" "unicode_start" "uncompress" "uname" "umount" "ulockmgr_server" "true" "touch" "tempfile" "tar" "tailf" "sync" "su" "stty" "static-sh" "ss" "sleep" "sh.distrib" "sh" "setupcon" "setfont" "setfacl" "sed" "running-in-container" "run-parts" "rnano" "rmdir" "rm" "red" "readlink" "rbash" "pwd" "plymouth-upstart-bridge" "plymouth" "ping6" "ping" "pidof" "openvt" "open" "ntfswipe" "ntfstruncate" "ntfsmove" "ntfsmftalloc" "ntfsls" "ntfsinfo" "ntfsfix" "ntfsdump_logfile" "ntfscmp" "ntfscluster" "ntfsck" "ntfscat" "ntfs-3g.usermap" "ntfs-3g.secaudit" "ntfs-3g.probe" "ntfs-3g" "nisdomainname" "netstat" "netcat" "nc.openbsd" "nc" "nano" "mv" "mt-gnu" "mt" "mountpoint" "mount" "more" "mktemp" "mknod" "mkdir" "lsmod" "lsblk" "ls" "lowntfs-3g" "login" "loadkeys" "ln" "lesspipe" "lesskey" "lessfile" "lessecho" "less" "kmod" "kbd_mode" "ip" "hostname" "gzip" "gzexe" "gunzip" "grep" "getfacl" "fusermount" "fuser" "findmnt" "fgrep" "fgconsole" "false" "egrep" "ed" "echo" "dumpkeys" "domainname" "dnsdomainname" "dmesg" "dir" "df" "dd" "dbus-uuidgen" "dbus-daemon" "dbus-cleanup-sockets" "date" "dash" "cpio" "cp" "chvt" "chown" "chmod" "chgrp" "chacl" "cat" "bzmore" "bzless" "bzip2recover" "bzip2" "bzgrep" "bzfgrep" "bzexe" "bzegrep" "bzdiff" "bzcmp" "bzcat" "busybox" "bunzip2" "bash" "../" "./")
+
+ ("/home/matt/src/simple-lisp/src/extern/mpc/" (21319 61469 585291 526000) "test" "tests/" "mpc.h" "mpc.c" "examples/" "README.md" "Makefile" "LICENSE.md" ".gitignore" ".git/" "../" "./")
+
+ ("/../" (21186 64132 172608 733000) "vmlinuz.old" "vmlinuz" "initrd.img.old" "initrd.img" "cdrom/" "var/" "usr/" "tmp/" "sys/" "srv/" "sbin/" "run/" "root/" "proc/" "opt/" "mnt/" "lib64/" "lib/" "dev/" "bin/" "media/" "etc/" "home/" "boot/" "../" "./")
+
+ ("/home/matt/src/simple-lisp/src/extern/" (21319 58914 108516 238000) "mpc/" "../" "./")
+
+ ("/home/matt/src/cl-sphinx/tests/" (21205 31007 739097 351000) "scratch.lisp" "packages.lisp" "packages.lisp~" "../" "./")
+
+ ("/home/matt/src/cl-sphinx/src/" (21205 31109 16101 128000) "segmentation.lisp" "nbest.lisp" "posix.lisp" "sphinxbase-sys.lisp" "pocketsphinx-sys.lisp" "pocketsphinx-utils.lisp" "packages.lisp" "hypothesis.lisp" "decoder.lisp" "config.txt" "config.lisp" "../" "./")
+
+ ("/home/matt/" (21188 14051 583357 525000) ".xsession-errors" ".xsession-errors.old" ".dmrc" ".sbclrc" ".sbclrc~" ".quicklisp/" ".pki/" ".gstreamer-0.10/" ".steampid" ".steampath" "sphinxbase.bug" ".pulse-cookie" ".ssh/" "bin/" ".subversion/" ".bitcoin/" "Steam/" ".steam/" "Ubuntu One/" ".ido.last" ".ido.last~" ".java/" ".technic/" ".gitconfig" ".mypaint/" ".lesshst" ".kde/" ".clamtk/" "Tasha's Stuff/" ".thunderbird/" ".thumbnails/" ".gimp-2.8/" ".irssi/" ".launchpadlib/" ".slime-history.eld" ".smex-items" ".apport-ignore.xml" ".macromedia/" ".adobe/" ".emacs-places" ".rnd" ".icons/" ".gnome2_private/" ".gnome2/" ".gksu.lock" ".bashrc" ".profile" ".aliases.bash" ".compiz/" ".mozilla/" ".dbus/" ".Xauthority" ".emacs.d/" "src/" ".system/" ".bash_history" ".gconf/" ".ICEauthority" ".local/" ".config/" "Videos/" "Pictures/" "Music/" "Documents/" "Public/" "Templates/" "Downloads/" "Desktop/" ".cache/" "examples.desktop" ".bash_logout" "../" "./")
+
+ ("/home/matt/src/cl-sphinx/data/" (21139 36066 658568 933000) "test_file.raw" "../" "./")
+
+ ("/home/matt/.config/common-lisp/source-registry.conf.d/" (21183 12619 433398 544000) "10-local-projects.conf" "10-local-projects.conf~" "00-quicklisp.conf" "00-quicklisp.conf~" "../" "./")
+
+ ("/home/matt/.config/common-lisp/" (21183 12255 329997 739000) "source-registry.conf.d/" "../" "./")
+
+ ("/home/matt/.config/" (21183 12241 74873 570000) "common-lisp/" "ipython/" "chromium/" "df-lnp-installer/" "enchant/" "Bitcoin/" "ubuntuone/" "signond/" "Empathy/" "gnome-control-center/" "inkscape/" "eog/" "google-googletalkplugin/" "gedit/" "gtk-2.0/" "yelp/" "autostart/" "libreoffice/" "touchegg/" "Trolltech.conf" "software-center/" "libaccounts-glib/" "update-notifier/" "nautilus/" "gtk-3.0/" "compiz-1/" "gnome-session/" "evolution/" "ibus/" "dconf/" "pulse/" "upstart/" "user-dirs.locale" "user-dirs.dirs" "../" "./")
+
+ ("/home/" (21147 53882 842564 587000) "natasha/" "matt/" "../" "./")
+
+ ("/home/matt/src/" (21171 18993 787344 157000) "xprogramname.py" "ubuntu-saucy/" "df-lnp-installer/" "Touchegg-gce/" "ultralisp/" "cmusphinx/" "patch" "linux-3.13-rc1/" "linux-3.13-rc1-patched/" "kernel-configs/" "linux-3.13-rc1.tar.xz" "linux-3.12.1/" "cl-sphinx/" "../" "./")
+
+ ("/home/matt/src/cl-sphinx/" (21187 952 58696 589000) "tests/" "cl-pocketsphinx-test.asd" "cl-pocketsphinx-test.asd~" "src/" "doc/" "data/" "cl-pocketsphinx.asd" "README.md" "LICENSE" ".gitignore" ".git/" "../" "./")
+
+ ("/home/matt/.system/xmodmap/" (21182 11820 562656 559000) "rrawc.xmod" "slca.xmod" "../" "./")
+
+ ("/home/matt/src/ultralisp/" (21166 277 27363 18000) "README" "README~" "LICENSE" "LICENSE~" "doc/" "src/" ".gitignore" ".git/" "../" "./")
+
+ ("/etc/X11/xorg.conf.d/" (21151 28698 117705 739000) "50-synaptics.conf" "50-synaptics.conf~" "10-evdev.conf" "10-evdev.conf~" "50-touchscreen.conf" "50-touchscreen.conf~" "../" "./")
+
+ ("/home/matt/.system/scripts/python/pydel/" (21159 23831 109081 443000) ".git/" "LICENSE" "README.md" "del.pyc" "del.py~" "del.py" "../" "./")
+
+ ("/home/matt/Downloads/touchegg-1.1.1/src/touchegg/gestures/implementation/" (21142 7317 885067 801000) "gestures.implementation.pri" "Gesture.cpp" "Gesture.h" "../" "./")
+
+ ("/home/matt/Downloads/touchegg-1.1.1/src/touchegg/gestures/factory/" (21142 7317 887067 801000) "gestures.factory.pri" "GestureFactory.cpp" "GestureFactory.h" "../" "./")
+
+ ("/home/matt/Downloads/touchegg-1.1.1/src/touchegg/gestures/" (20612 15943 0 0) "collector/" "factory/" "types/" "implementation/" "handler/" "../" "./")
+
+ ("/home/matt/Downloads/touchegg-1.1.1/src/touchegg/gestures/collector/" (21142 7317 887067 801000) "GestureCollector.cpp" "gestures.collector.pri" "GestureCollector.h" "../" "./")
+
+ ("/home/matt/.system/" (21139 36044 718568 673000) "xmodmap/" "walkerver/" "scripts/" "gopath/" "dotfiles/" "bin/" "README.md" "LICENSE" "GNUmakefile" ".git/" "../" "./")
+
+ ("/home/matt/.emacs.d/" (21142 6195 24045 478000) "sbcl.core-for-slime" "mklispcore.sh~" "shit/" "semanticdb/" "url/" "srecode-map.el" "site-lisp/" "session.1061fb5a77799fb24b133717747791118600000018790056" "recentf" "mkslime-core.bash" "menu_log.notes" "init.el~" "init.el" "elpa/" "ede-projects.el" "auto-save-list/" "ac-comphist.dat" "abbrev_defs" "README.md" "LICENSE" ".org-id-locations" ".git/" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

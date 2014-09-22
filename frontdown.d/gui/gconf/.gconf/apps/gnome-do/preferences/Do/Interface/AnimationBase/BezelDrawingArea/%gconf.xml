@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="Animated" mtime="1385604382" type="bool" value="true"/>
+	<entry name="Shadow" mtime="1385604376" type="bool" value="true"/>
+	<entry name="WindowRadius" mtime="1385604376" type="int" value="-1"/>
+	<entry name="BackgroundColor" mtime="1387478530" type="string">
+		<stringvalue>2C2235F3</stringvalue>
+	</entry>
+</gconf>

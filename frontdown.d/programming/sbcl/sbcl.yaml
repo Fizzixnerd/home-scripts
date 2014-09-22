@@ -1,0 +1,9 @@
+files:
+  - source: programming/sbcl/common-lisp
+    target: ~/.config/common-lisp
+
+  - source: programming/sbcl/.quicklisp
+    target: ~/.quicklisp
+
+  - source: programming/sbcl/.sbclrc
+    target: ~/.sbclrc

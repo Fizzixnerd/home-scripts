@@ -1,0 +1,24 @@
+files:
+  - source: core/emacs/.emacs.d
+    target: ~/.emacs.d
+
+  - source: core/emacs/.emacs-places
+    target: ~/.emacs-places
+
+  - source: core/emacs/.ido.last
+    target: ~/.ido.last
+
+  - source: core/emacs/.slime-history.eld
+    target: ~/.slime-history.eld
+
+  - source: core/emacs/.smex-items
+    target: ~/.smex-items
+
+  - source: core/emacs/start_emacs_server.bash
+    target: ~/.system/scripts/bash/start_emacs_server.bash
+    link:   ~/.system/bin/start_emacs_server
+
+  - source: core/emacs/start_emacs_server.desktop
+    target: ~/.config/autostart/start_emacs_server.desktop
+
+

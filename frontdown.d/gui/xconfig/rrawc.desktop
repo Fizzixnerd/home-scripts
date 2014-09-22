@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=rrawc
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_CA]=Replace Right Alt with Control
+Name=Replace Right Alt with Control
+Comment[en_CA]=
+Comment=

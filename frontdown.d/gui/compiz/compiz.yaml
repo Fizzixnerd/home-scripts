@@ -1,0 +1,7 @@
+files:
+  - source: gui/compiz/compiz-1
+    target: ~/.config/compiz-1
+
+#  - source: gui/compiz/.compiz
+#    target: ~/.compiz
+# These are just sessions, don't really need them...
